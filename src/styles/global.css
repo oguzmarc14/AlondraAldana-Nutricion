@@ -1,1 +1,12 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald:wght@200..700&family=Pacifico&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playwrite+DE+SAS:wght@100..400&display=swap");
+
+@theme {
+  --color-brown: #423431;
+  --color-red: #f70b17;
+  --color-black: #050000;
+  --color-yellow: #948c29;
+  --color-pink: #e7cba4;
+
+  --font-sans: "Pacifico", cursive;
+}
