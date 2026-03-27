@@ -1,0 +1,45 @@
+---
+import ButtonHeader from "./ButtonHeader.astro";
+
+interface Props {
+  h1Title: string;
+  h2Title: string;
+  imageSrc: string;
+  imageAlt: string;
+}
+
+const { h1Title, h2Title, imageSrc, imageAlt } = Astro.props;
+---
+
+<div class:list={[]}>
+  <img
+    src={imageSrc}
+    alt={imageAlt}
+    class:list={["absolute", "w-full", "h-screen", "flex"]}
+  />
+  <div
+    class:list={[
+      "relative",
+      "flex",
+      "",
+      "h-screen",
+      "left-30",
+      "flex-col",
+      "justify-center",
+      "gap-5",
+    ]}
+  >
+    <h1 class:list={["text-6xl", "w-3/7", "text-", "Pacifico"]}>{h1Title}</h1>
+    <h2 class:list={["w-3/7"]}>
+      {h2Title}
+    </h2>
+    <slot>
+        <ButtonHeader
+        buttonText1="Agenda tu cita"
+        buttonText2="Mis Servicios"
+        numWhatsapp="3348153699"
+        href1="/services"
+      />
+    </slot>
+  </div>
+</div>
