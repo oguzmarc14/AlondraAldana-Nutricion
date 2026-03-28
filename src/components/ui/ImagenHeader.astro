@@ -1,5 +1,5 @@
 ---
-import ButtonHeader from "./ButtonHeader.astro";
+import BotonHeader from "./botonHeader.astro";
 
 interface Props {
   h1Title: string;
@@ -30,16 +30,22 @@ const { h1Title, h2Title, imageSrc, imageAlt } = Astro.props;
     ]}
   >
     <h1 class:list={["text-6xl", "w-3/7", "text-", "Pacifico"]}>{h1Title}</h1>
-    <h2 class:list={["w-3/7"]}>
+    <h2 class:list={["w-3/7", "mb-2"]}>
       {h2Title}
     </h2>
     <slot>
-        <ButtonHeader
-        buttonText1="Agenda tu cita"
-        buttonText2="Mis Servicios"
-        numWhatsapp="3348153699"
-        href1="/services"
+      <div class:list={["flex", "flex-row", "gap-4"]}>
+      <BotonHeader
+        botonTexto="Agenda tu cita"
+        hrefBoton="Mis Servicios"
+        botonPrimario={true}
       />
+      <BotonHeader
+        botonTexto="Servicios"
+        hrefBoton="/servicios"
+        botonPrimario={false}
+      />
+      </div>
     </slot>
   </div>
 </div>
