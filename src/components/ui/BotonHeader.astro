@@ -1,0 +1,16 @@
+---
+interface Props {
+  botonTexto: string;
+  hrefBoton: string;
+  botonPrimario: boolean;
+}
+
+const { botonTexto, hrefBoton, botonPrimario } = Astro.props;
+---
+
+<div>
+  <a
+    class:list={["rounded-2xl", botonPrimario ? "bg-yellow" : "bg-yellow/40", "py-2", "px-6"]}
+    href={hrefBoton}>{botonTexto}</a
+  >
+</div>
