@@ -1,0 +1,42 @@
+---
+import CardServicios from "../ui/CardServicios.astro";
+
+const servicios = [
+  {
+    titulo: "Asesoramiento Nutricional Personalizado",
+    descripcion:
+      "Ofrecemos planes de alimentación adaptados a tus necesidades y objetivos, ya sea para perder peso, ganar masa muscular o mejorar tu salud en general.",
+    srcImagen: "/assets/servicios/asesoramiento.png",
+    altImagen: "Asesoramiento Nutricional Personalizado",
+  },
+  {
+    titulo: "Planes de Alimentación",
+    descripcion:
+      "Diseñamos planes de alimentación equilibrados y sostenibles que se ajustan a tu estilo de vida y preferencias alimentarias.",
+    srcImagen: "/assets/servicios/planes.png",
+    altImagen: "Planes de Alimentación",
+  },
+  {
+    titulo: "Seguimiento y Apoyo Continuo",
+    descripcion:
+      "Te acompañamos en tu viaje hacia una vida más saludable con seguimiento regular, ajustes en tu plan y motivación constante.",
+    srcImagen: "/assets/servicios/seguimiento.png",
+    altImagen: "Seguimiento y Apoyo Continuo",
+  },
+];
+
+---
+<section class:list={["py-16", "px-4", "bg-lightPink"]}>
+  <h2 class:list={["text-3xl", "font-bold", "text-center", "mb-12"]}>Nuestros Servicios</h2>
+  <div class:list={["grid", "gap-8", "md:grid-cols-2", "lg:grid-cols-3"]}>
+    {servicios.map((servicio) => (
+      <CardServicios
+        titulo={servicio.titulo}
+        descripcion={servicio.descripcion}
+        srcImagen={servicio.srcImagen}
+        altImagen={servicio.altImagen}
+        botonTexto="Saber más"
+        hrefBoton="#"
+      />
+    ))}
+  </div>
