@@ -2,17 +2,18 @@
 interface Props {
   titulo: string;
   descripcion: string;
-  imagen: string;
+  srcImagen: string;
+  altImagen?: string;
   botonTexto: string;
   hrefBoton: string;
 }
 
-const { titulo, descripcion, imagen, botonTexto, hrefBoton } = Astro.props;
+const { titulo, descripcion, srcImagen, altImagen, botonTexto, hrefBoton } = Astro.props;
 ---
 
 <article>
-    <h3>titulo</h3>
-    <p>descripcion</p>
-    <img src={imagen} alt={titulo} />
+    <h3>{titulo}</h3>
+    <p>{descripcion}</p>
+    <img src={srcImagen} alt={altImagen} />
     <a href={hrefBoton}>{botonTexto}</a>
 </article>
