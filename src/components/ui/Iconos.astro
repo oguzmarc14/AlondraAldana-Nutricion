@@ -1,0 +1,45 @@
+---
+import {
+  FaAppleAlt,
+  FaLeaf,
+  FaChartLine,
+  FaHeartbeat,
+  FaUserMd,
+  FaDumbbell,
+  FaUtensils,
+  FaStethoscope,
+  FaClipboardList,
+  FaSmile,
+  FaWater,
+  FaCarrot,
+  FaFish,
+  FaBreadSlice,
+} from "react-icons/fa";
+
+interface Props {
+  nombre: string;
+  size?: string | number;
+  color?: string;
+}
+
+const iconos = {
+  apple: FaAppleAlt,
+  leaf: FaLeaf,
+  chart: FaChartLine,
+  heart: FaHeartbeat,
+  doctor: FaUserMd,
+  gym: FaDumbbell,
+  food: FaUtensils,
+  stethoscope: FaStethoscope,
+  checklist: FaClipboardList,
+  smile: FaSmile,
+  water: FaWater,
+  carrot: FaCarrot,
+  fish: FaFish,
+  bread: FaBreadSlice,
+};
+
+const { nombre, size = 48, color = "#a67c52" } = Astro.props;
+const Icono = iconos[nombre];
+---
+{Icono ? <Icono size={size} color={color} /> : null}

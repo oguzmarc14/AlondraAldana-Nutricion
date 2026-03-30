@@ -1,22 +1,5 @@
 ---
-import {
-  FaAppleAlt,
-  FaLeaf,
-  FaChartLine,
-  FaHeartbeat,
-  FaUserMd,
-  FaDumbbell,
-  FaUtensils,
-  FaStethoscope,
-  FaClipboardList,
-  FaSmile,
-  FaWater,
-  FaCarrot,
-  FaFish,
-  FaBreadSlice,
-} from "react-icons/fa";
-
-import type { IconType } from "react-icons";
+import Iconos from "./Iconos.astro";
 
 interface Props {
   titulo: string;
@@ -28,24 +11,6 @@ interface Props {
 
 const { titulo, descripcion, botonTexto, hrefBoton, icono } = Astro.props;
 
-const iconos = {
-  apple: FaAppleAlt,
-  leaf: FaLeaf,
-  chart: FaChartLine,
-  heart: FaHeartbeat,
-  doctor: FaUserMd,
-  gym: FaDumbbell,
-  food: FaUtensils,
-  stethoscope: FaStethoscope,
-  checklist: FaClipboardList,
-  smile: FaSmile,
-  water: FaWater,
-  carrot: FaCarrot,
-  fish: FaFish,
-  bread: FaBreadSlice,
-};
-
-const Icono = iconos[icono];
 ---
 
 <article
@@ -58,14 +23,12 @@ const Icono = iconos[icono];
     "rounded-full",
     "border-crema1",
     "border-4",
-    "hover:scale-103 duration-300",
   ]}
 >
-  {
-    Icono && (
-      <Icono className="text-6xl flex mx-auto bg-amber-950/30 rounded-full p-2 mb-2 text-white"/>
-    )
-  }
+  {/* Icono */}
+  <div class:list={["flex", "justify-center", "w-fit", "justify-self-center", "rounded-full", "p-2", "bg-amber-950/30", "mb-2"]}>
+    <Iconos nombre={icono} size={48} color=white />
+  </div>
   <h3 class:list={["text-center", "mb-3", "mx-6", "font-pacifico", "font-bold", "text-lg"]}>{titulo}</h3>
   <p class:list={["text-center", "mb-3"]}>{descripcion}</p>
   <a
@@ -83,6 +46,8 @@ const Icono = iconos[icono];
       "font-bold",
       "hover:scale-105"
     ]}
-    href={hrefBoton}>{botonTexto}</a
+    href={hrefBoton}
   >
+    {botonTexto}
+  </a>
 </article>
