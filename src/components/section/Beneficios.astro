@@ -1,0 +1,72 @@
+---
+import CardBeneficios from "../ui/CardBeneficios.astro";
+
+const beneficios = [
+  {
+    titulo: "Mejora tu energía diaria",
+    descripcion:
+      "Recupera tu vitalidad y siéntete con más energía durante el día con una alimentación equilibrada y adaptada a tu cuerpo.",
+  },
+  {
+    titulo: "Logra un peso saludable",
+    descripcion:
+      "Alcanza tu peso ideal sin dietas extremas, con un plan nutricional realista y sostenible a largo plazo.",
+  },
+  {
+    titulo: "Mejora tu relación con la comida",
+    descripcion:
+      "Aprende a comer sin culpa ni restricciones, creando hábitos saludables que puedas mantener en tu día a día.",
+  },
+  {
+    titulo: "Aumenta tu rendimiento físico",
+    descripcion:
+      "Optimiza tu alimentación para mejorar tu rendimiento, recuperación y resultados en tu entrenamiento.",
+  },
+  {
+    titulo: "Previene enfermedades",
+    descripcion:
+      "Reduce el riesgo de enfermedades y mejora tu bienestar general a través de una nutrición adecuada.",
+  },
+  {
+    titulo: "Mejora tu bienestar general",
+    descripcion:
+      "RSiéntete mejor contigo mismo, mejora tu digestión y disfruta de un estilo de vida más saludable.",
+  },
+];
+---
+
+<section
+  class:list={[
+    "w-full",
+    "bg-gradient-to-r",
+    "from-crema1",
+    "via-crema2",
+    "to-crema3",
+    "py-15",
+  ]}
+>
+  <div class="container mx-auto text-center text-brown/80">
+    
+    <h2 class="text-5xl font-bold">
+      Beneficios de una alimentación personalizada
+    </h2>
+
+    <div
+      class:list={[
+        "flex",
+        "flex-wrap",
+        "justify-center",
+        "gap-10",
+        "mt-10",
+      ]}
+    >
+      {beneficios.map((beneficio) => (
+        <CardBeneficios
+          titulo={beneficio.titulo}
+          descripcion={beneficio.descripcion}
+        />
+      ))}
+    </div>
+
+  </div>
+</section>

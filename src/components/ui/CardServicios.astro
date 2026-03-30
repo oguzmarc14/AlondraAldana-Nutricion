@@ -1,19 +1,88 @@
 ---
+import {
+  FaAppleAlt,
+  FaLeaf,
+  FaChartLine,
+  FaHeartbeat,
+  FaUserMd,
+  FaDumbbell,
+  FaUtensils,
+  FaStethoscope,
+  FaClipboardList,
+  FaSmile,
+  FaWater,
+  FaCarrot,
+  FaFish,
+  FaBreadSlice,
+} from "react-icons/fa";
+
+import type { IconType } from "react-icons";
+
 interface Props {
   titulo: string;
   descripcion: string;
-  srcImagen: string;
-  altImagen?: string;
   botonTexto: string;
   hrefBoton: string;
+  icono: string;
 }
 
-const { titulo, descripcion, srcImagen, altImagen, botonTexto, hrefBoton } = Astro.props;
+const { titulo, descripcion, botonTexto, hrefBoton, icono } = Astro.props;
+
+const iconos = {
+  apple: FaAppleAlt,
+  leaf: FaLeaf,
+  chart: FaChartLine,
+  heart: FaHeartbeat,
+  doctor: FaUserMd,
+  gym: FaDumbbell,
+  food: FaUtensils,
+  stethoscope: FaStethoscope,
+  checklist: FaClipboardList,
+  smile: FaSmile,
+  water: FaWater,
+  carrot: FaCarrot,
+  fish: FaFish,
+  bread: FaBreadSlice,
+};
+
+const Icono = iconos[icono];
 ---
 
-<article>
-    <h3>{titulo}</h3>
-    <p>{descripcion}</p>
-    <img src={srcImagen} alt={altImagen} />
-    <a href={hrefBoton}>{botonTexto}</a>
+<article
+  class:list={[
+    "bg-yellow/20",
+    "p-8",
+    "max-w-80",
+    "relative",
+    "min-h-80",
+    "rounded-full",
+    "border-crema1",
+    "border-4",
+    "hover:scale-103 duration-300",
+  ]}
+>
+  {
+    Icono && (
+      <Icono className="text-6xl flex mx-auto bg-amber-950/30 rounded-full p-2 mb-2 text-white"/>
+    )
+  }
+  <h3 class:list={["text-center", "mb-3", "mx-6", "font-pacifico", "font-bold", "text-lg"]}>{titulo}</h3>
+  <p class:list={["text-center", "mb-3"]}>{descripcion}</p>
+  <a
+    class:list={[
+      "absolute",
+      "justify-center",
+      "flex",
+      "-translate-x-1/2",
+      "left-1/2",
+      "top-64",
+      "bg-amber-950/20",
+      "px-3",
+      "py-1",
+      "rounded-2xl",
+      "font-bold",
+      "hover:scale-105"
+    ]}
+    href={hrefBoton}>{botonTexto}</a
+  >
 </article>

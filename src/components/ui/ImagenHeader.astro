@@ -1,5 +1,5 @@
 ---
-import BotonHeader from "./botonHeader.astro";
+import BotonHeader from "./BotonHeader.astro";
 
 interface Props {
   h1Title: string;
@@ -11,7 +11,7 @@ interface Props {
 const { h1Title, h2Title, imageSrc, imageAlt } = Astro.props;
 ---
 
-<div class:list={[]}>
+<div class:list={["relative", "flex", "h-screen", "w-full", "overflow-hidden"]}>
   <img
     src={imageSrc}
     alt={imageAlt}
@@ -21,7 +21,6 @@ const { h1Title, h2Title, imageSrc, imageAlt } = Astro.props;
     class:list={[
       "relative",
       "flex",
-      "",
       "h-screen",
       "left-30",
       "flex-col",
@@ -29,12 +28,12 @@ const { h1Title, h2Title, imageSrc, imageAlt } = Astro.props;
       "gap-5",
     ]}
   >
-    <h1 class:list={["text-6xl", "w-3/7", "text-", "Pacifico"]}>{h1Title}</h1>
+    <h1 class:list={["text-6xl", "w-3/7", "text-", "Pacifico", "font-semibold", "text-brown/90"]}>{h1Title}</h1>
     <h2 class:list={["w-3/7", "mb-2"]}>
       {h2Title}
     </h2>
     <slot>
-      <div class:list={["flex", "flex-row", "gap-4"]}>
+      <div class:list={["flex", "flex-row", "gap-2"]}>
       <BotonHeader
         botonTexto="Agenda tu cita"
         hrefBoton="Mis Servicios"

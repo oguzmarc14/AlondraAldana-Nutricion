@@ -3,40 +3,77 @@ import CardServicios from "../ui/CardServicios.astro";
 
 const servicios = [
   {
-    titulo: "Asesoramiento Nutricional Personalizado",
+    titulo: "Consulta Inicial y Evaluación Nutricional",
     descripcion:
-      "Ofrecemos planes de alimentación adaptados a tus necesidades y objetivos, ya sea para perder peso, ganar masa muscular o mejorar tu salud en general.",
-    srcImagen: "/assets/servicios/asesoramiento.png",
-    altImagen: "Asesoramiento Nutricional Personalizado",
+      "Evaluamos tu salud, hábitos y objetivos para comenzar tu proceso nutricional.",
+    icono: "doctor",
   },
   {
-    titulo: "Planes de Alimentación",
+    titulo: "Valoración corporal /antropométrica",
     descripcion:
-      "Diseñamos planes de alimentación equilibrados y sostenibles que se ajustan a tu estilo de vida y preferencias alimentarias.",
-    srcImagen: "/assets/servicios/planes.png",
-    altImagen: "Planes de Alimentación",
+      "Analizamos tu composición corporal para establecer metas reales.",
+    icono: "gym",
   },
   {
-    titulo: "Seguimiento y Apoyo Continuo",
+    titulo: "Plan de Alimentación Personalizado",
     descripcion:
-      "Te acompañamos en tu viaje hacia una vida más saludable con seguimiento regular, ajustes en tu plan y motivación constante.",
-    srcImagen: "/assets/servicios/seguimiento.png",
-    altImagen: "Seguimiento y Apoyo Continuo",
+      "Creamos un plan adaptado a tu estilo de vida, sin dietas extremas.",
+    icono: "food",
+  },
+  {
+    titulo: "Orientación y Educación Nutricional",
+    descripcion:
+      "Aprende a comer y sentirte mejor con la comida con una asesoría clara y práctica.",
+    icono: "chart",
+  },
+  {
+    titulo: "Control de Progreso",
+    descripcion:
+      "Monitoreamos tu progreso y ajustamos tu plan para mejores resultados.",
+    icono: "heart",
+  },
+  {
+    titulo: "Seguimiento en todo momento con App",
+    descripcion:
+      "Puedes seguir tu progreso y verificar tus dietas a traves de la aplicacion",
+    icono: "checklist",
   },
 ];
-
 ---
-<section class:list={["py-16", "px-4", "bg-lightPink"]}>
-  <h2 class:list={["text-3xl", "font-bold", "text-center", "mb-12"]}>Nuestros Servicios</h2>
-  <div class:list={["grid", "gap-8", "md:grid-cols-2", "lg:grid-cols-3"]}>
-    {servicios.map((servicio) => (
-      <CardServicios
-        titulo={servicio.titulo}
-        descripcion={servicio.descripcion}
-        srcImagen={servicio.srcImagen}
-        altImagen={servicio.altImagen}
-        botonTexto="Saber más"
-        hrefBoton="#"
-      />
-    ))}
-  </div>
+
+<div
+  class:list={[
+    "bg-gradient-to-r",
+    "from-crema1",
+    "via-crema2",
+    "to-crema3",
+    "rounded-3xl",
+  ]}
+>
+  <section class:list={["container", "mx-auto", "py-16", "px-4"]}>
+    <h2
+      class:list={[
+        "text-5xl",
+        "font-bold",
+        "text-center",
+        "mb-20",
+        "text-brown/80",
+      ]}
+    >
+      Nuestros Servicios
+    </h2>
+    <div class:list={["flex", "flex-wrap", "gap-8", "justify-center"]}>
+      {
+        servicios.map((servicio) => (
+          <CardServicios
+            titulo={servicio.titulo}
+            descripcion={servicio.descripcion}
+            icono={servicio.icono}
+            botonTexto="Saber más"
+            hrefBoton="#"
+          />
+        ))
+      }
+    </div>
+  </section>
+  </div

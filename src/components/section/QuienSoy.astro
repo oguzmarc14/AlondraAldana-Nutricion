@@ -1,0 +1,49 @@
+---
+import CardImagenAlondra from "../ui/CardImagenAlondra.astro";
+import CardTexto from "../ui/cardTexto.astro";
+---
+
+<section
+  class:list={["bg-gradient-to-r", "from-crema1", "via-crema2", "to-crema3"]}
+>
+  <h2
+    class:list={[
+      "text-center",
+      "text-5xl",
+      "font-bold",
+      "text-brown/80",
+      "py-8",
+    ]}
+  >
+    ¿Quien Soy?
+  </h2>
+  <article
+    class:list={[
+      "flex",
+      "flex-row",
+      "items-center",
+      "justify-center",
+      "gap-10",
+      "mt-5",
+    ]}
+  >
+    <div class:list={[]}>
+      <CardTexto
+        nombre="Alondra Aldana"
+        descripcion="Soy una nutrióloga apasionada y comprometida a transformar vidas a través de una alimentación consciente y realista, con dedicación y un enfoque integral. Mi objetivo es ayudar a mis pacientes a alcanzar un equilibrio entre la salud, bienestar y placer por la comida. ¡Me encantaría ser parte de tu cambio!"
+        badges={[
+          { text: "Nutrición Clínica", color: "crema" },
+          { text: "Nutrición Deportiva", color: "crema" },
+          { text: "Nutrición Preventiva", color: "crema" },
+          { text: "Nutrición Geriatrica", color: "crema" },
+        ]}
+      />
+    </div>
+    <div class:list={["-ml-14", "mt-15"]}>
+      <CardImagenAlondra
+        src="/images/AlondraAldana.jpeg"
+        alt="Alondra Aldana"
+      />
+    </div>
+  </article>
+</section>
