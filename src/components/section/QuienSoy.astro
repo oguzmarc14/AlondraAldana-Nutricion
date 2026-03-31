@@ -12,7 +12,8 @@ import CardTexto from "../ui/cardTexto.astro";
       "text-5xl",
       "font-bold",
       "text-brown/80",
-      "py-8",
+      "sm:py-8",
+      "py-12"
     ]}
   >
     ¿Quien Soy?
@@ -20,11 +21,12 @@ import CardTexto from "../ui/cardTexto.astro";
   <article
     class:list={[
       "flex",
-      "flex-row",
+      "sm:flex-row",
+      "flex-col",
       "items-center",
       "justify-center",
-      "gap-10",
-      "mt-4",
+      "sm:gap-10",
+      "sm:mt-4",
     ]}
   >
     <div class:list={[]}>
@@ -39,7 +41,7 @@ import CardTexto from "../ui/cardTexto.astro";
         ]}
       />
     </div>
-    <div class:list={["-ml-14", "mt-20"]}>
+    <div class:list={["sm:-ml-14", "sm:mt-20", "mt-5"]}>
       <CardImagenAlondra
         src="/images/AlondraAldana.jpeg"
         alt="Alondra Aldana"
