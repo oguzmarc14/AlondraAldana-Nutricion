@@ -1,0 +1,86 @@
+---
+import CardTestimonios from "../ui/CardTestimonios.astro";
+
+const testimonios = [
+  {
+    nombre: "Marco Olivares",
+    descripcion:
+      "La nutriologa Alondra Aldana, es una profesional excepcional. Su enfoque personalizado y su dedicación a la salud de sus pacientes son impresionantes. Gracias a su orientación, he logrado alcanzar mis objetivos de bienestar de manera efectiva y sostenible.",
+    img: "/assets/img/testimonios/marco.png",
+  },
+  {
+    nombre: "Karla Ramirez",
+    descripcion:
+      "La nutriologa Alondra Aldana, es una profesional excepcional. Su enfoque personalizado y su dedicación a la salud de sus pacientes son impresionantes. Gracias a su orientación, he logrado alcanzar mis objetivos de bienestar de manera efectiva y sostenible.",
+    img: "/assets/img/testimonios/sofia.png",
+  },
+  {
+    nombre: "Carlos Mendoza",
+    descripcion:
+      "La nutriologa Alondra Aldana, es una profesional excepcional. Su enfoque personalizado y su dedicación a la salud de sus pacientes son impresionantes. Gracias a su orientación, he logrado alcanzar mis objetivos de bienestar de manera efectiva y sostenible.",
+    img: "/assets/img/testimonios/carlos.png",
+  },
+  {
+    nombre: "Carlos Mendoza",
+    descripcion:
+      "La nutriologa Alondra Aldana, es una profesional excepcional. Su enfoque personalizado y su dedicación a la salud de sus pacientes son impresionantes. Gracias a su orientación, he logrado alcanzar mis objetivos de bienestar de manera efectiva y sostenible.",
+    img: "/assets/img/testimonios/carlos.png",
+  },
+];
+---
+
+<section
+  class:list={[
+    "container",
+    "flex",
+    "flex-col",
+    "items-center",
+    "justify-center",
+    "mx-auto",
+    "py-16",
+  ]}
+>
+  <div class:list={["w-full"]}>
+    <h2
+      class:list={[
+        "text-4xl md:text-5xl",
+        "text-center",
+        "text-brown/80",
+        "font-bold",
+      ]}
+    >
+      Testimonios
+    </h2>
+    <p
+      class:list={[
+        "text-base md:text-base",
+        "text-center",
+        "text-brown/60",
+        "mt-2",
+
+      ]}
+    >
+      Esto dicen los pacientes acerca de mi y de mi servicio.
+    </p>
+    <slot>
+      <div
+        class:list={[
+          "flex",
+          "mt-12", 
+          "flex-wrap",
+          "gap-y-6"
+        ]}
+      >
+        {
+          testimonios.map((testimonio) => (
+            <CardTestimonios
+              nombre={testimonio.nombre}
+              descripcion={testimonio.descripcion}
+              img={testimonio.img}
+            />
+          ))
+        }
+      </div>
+    </slot>
+  </div>
+</section>

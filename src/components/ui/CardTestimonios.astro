@@ -1,0 +1,17 @@
+---
+interface Props {
+  nombre: string;
+  descripcion: string;
+  img: string;
+  alt?: string;
+}
+
+const {nombre, descripcion, img} = Astro.props as Props; 
+---
+
+<article class:list={["flex", "justify-center", "flex-col", "text-center", "bg-crema3", "rounded-lg", "p-4", "mx-4", "max-w-70", "md:grid-rows-2", "mx-auto", "border-2", "border-brown/50", "shadow-lg"]}>
+    <h3 class:list={["mb-4", "font-semibold", "text-lg"]}>{nombre}</h3>
+    <p class:list={["mb-4", "text-base"]}>{descripcion}</p>
+    <img src={img} alt={nombre} />
+</article>
+
