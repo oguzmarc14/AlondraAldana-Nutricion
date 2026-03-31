@@ -34,7 +34,7 @@ const { h1Title, h2Title, imageSrc, imageAlt } = Astro.props;
       {h2Title}
     </h2>
     <slot>
-      <div class:list={["flex", "flex-row", "gap-2"]}>
+      <div class:list={["flex", "sm:flex-row", "gap-2", "flex-col"]}>
       <BotonHeader
         botonTexto="Agenda tu cita"
         hrefBoton="Mis Servicios"
