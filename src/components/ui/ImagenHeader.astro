@@ -22,13 +22,14 @@ const { h1Title, h2Title, imageSrc, imageAlt } = Astro.props;
       "relative",
       "flex",
       "h-screen",
-      "left-30",
+      "sm:left-30",
       "flex-col",
       "justify-center",
       "gap-5",
+      "left-10"
     ]}
   >
-    <h1 class:list={["text-6xl", "w-3/7", "text-", "Pacifico", "font-semibold", "text-brown/90"]}>{h1Title}</h1>
+    <h1 class:list={["sm:text-6xl font-bold", "text-2xl", "w-3/7", "Pacifico", "sm:font-semibold", "text-brown/90"]}>{h1Title}</h1>
     <h2 class:list={["w-3/7", "mb-2"]}>
       {h2Title}
     </h2>
