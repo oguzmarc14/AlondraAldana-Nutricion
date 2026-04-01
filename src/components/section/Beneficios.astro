@@ -43,34 +43,36 @@ const beneficios = [
     "via-crema2",
     "to-crema3",
     "py-10",
-    "sm:py-20"
+    "sm:py-20",
   ]}
 >
-  <div class:list={["container", "mx-auto", "px-6", "text-center", "text-brown/80"]}>
-    
+  <div
+    class:list={[
+      "container",
+      "mx-auto",
+      "px-6",
+      "text-center",
+      "text-brown/80",
+    ]}
+  >
     <h2 class:list={["text-4xl", "sm:text-5xl", "font-bold mb-4"]}>
       Beneficios de una alimentación personalizada
     </h2>
 
     <p class:list={["max-w-2xl", "mx-auto", "text-brown/60", "mb-12", "w-3/4"]}>
-      Mejora tu salud, tu energía y tu relación con la comida con un plan adaptado a ti.
+      Mejora tu salud, tu energía y tu relación con la comida con un plan
+      adaptado a ti.
     </p>
 
-    <div
-      class:list={[
-        "flex",
-        "flex-wrap",
-        "justify-center",
-        "gap-8",
-      ]}
-    >
-      {beneficios.map((beneficio) => (
-        <CardBeneficios
-          titulo={beneficio.titulo}
-          descripcion={beneficio.descripcion}
-        />
-      ))}
+    <div class:list={["flex", "flex-wrap", "justify-center", "gap-8"]}>
+      {
+        beneficios.map((beneficio) => (
+          <CardBeneficios
+            titulo={beneficio.titulo}
+            descripcion={beneficio.descripcion}
+          />
+        ))
+      }
     </div>
-
   </div>
 </section>

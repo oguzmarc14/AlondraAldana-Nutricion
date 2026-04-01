@@ -1,0 +1,257 @@
+---
+interface Props {
+    titulo?: string;
+    descripcion?: string;
+    numeroWhatsapp?: string;
+    textoBoton?: string;
+}
+
+const {
+    titulo = "Contactame",
+    descripcion = "Si quieres empezar tu cambio, llena este formulario y me pondre en contacto contigo para agendar tu asesoria.",
+    numeroWhatsapp = "524759513349",
+    textoBoton = "Enviar por WhatsApp",
+} = Astro.props;
+---
+
+<section
+    id="contacto"
+    class:list={[
+        "bg-gradient-to-r",
+        "from-crema1",
+        "via-crema2",
+        "to-crema3",
+        "py-16",
+        "px-4",
+    ]}
+>
+    <div class:list={["container", "mx-auto", "max-w-4xl"]}>
+        <h2 class:list={["text-4xl", "sm:text-5xl", "font-bold", "text-center", "text-brown/80"]}>
+            {titulo}
+        </h2>
+        <p class:list={["text-center", "text-brown/60", "mt-3", "mb-10", "w-full", "sm:w-3/4", "mx-auto"]}>
+            {descripcion}
+        </p>
+
+        <form
+            id="contactame-form"
+            data-whatsapp-number={numeroWhatsapp}
+            class:list={[
+                "bg-crema3",
+                "backdrop-blur-sm",
+                "border",
+                "border-brown/15",
+                "rounded-3xl",
+                "p-6",
+                "sm:p-8",
+                "shadow-lg",
+            ]}
+        >
+            <div class:list={["grid", "grid-cols-1", "md:grid-cols-2", "gap-5"]}>
+                <div>
+                    <label for="nombre" class:list={["block", "text-brown/80", "font-semibold", "mb-2"]}>
+                        Nombre completo
+                    </label>
+                    <input
+                        id="nombre"
+                        name="nombre"
+                        type="text"
+                        required
+                        placeholder="Ej. Ana Perez"
+                        class:list={[
+                            "w-full",
+                            "rounded-xl",
+                            "border",
+                            "border-brown/25",
+                            "bg-crema1/80",
+                            "px-4",
+                            "py-3",
+                            "outline-none",
+                            "focus:ring-2",
+                            "focus:ring-yellow/40",
+                            "focus:border-yellow/70",
+                        ]}
+                    />
+                </div>
+
+                <div>
+                    <label for="email" class:list={["block", "text-brown/80", "font-semibold", "mb-2"]}>
+                        Correo electronico
+                    </label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="tucorreo@email.com"
+                        class:list={[
+                            "w-full",
+                            "rounded-xl",
+                            "border",
+                            "border-brown/25",
+                            "bg-crema1/80",
+                            "px-4",
+                            "py-3",
+                            "outline-none",
+                            "focus:ring-2",
+                            "focus:ring-yellow/40",
+                            "focus:border-yellow/70",
+                        ]}
+                    />
+                </div>
+
+                <div>
+                    <label for="telefono" class:list={["block", "text-brown/80", "font-semibold", "mb-2"]}>
+                        Telefono
+                    </label>
+                    <input
+                        id="telefono"
+                        name="telefono"
+                        type="tel"
+                        placeholder="Ej. 4491234567"
+                        class:list={[
+                            "w-full",
+                            "rounded-xl",
+                            "border",
+                            "border-brown/25",
+                            "bg-crema1/80",
+                            "px-4",
+                            "py-3",
+                            "outline-none",
+                            "focus:ring-2",
+                            "focus:ring-yellow/40",
+                            "focus:border-yellow/70",
+                        ]}
+                    />
+                </div>
+
+                <div>
+                    <label for="objetivo" class:list={["block", "text-brown/80", "font-semibold", "mb-2"]}>
+                        Objetivo principal
+                    </label>
+                    <select
+                        id="objetivo"
+                        name="objetivo"
+                        required
+                        class:list={[
+                            "w-full",
+                            "rounded-xl",
+                            "border",
+                            "border-brown/25",
+                            "bg-crema1/80",
+                            "px-4",
+                            "py-3",
+                            "outline-none",
+                            "focus:ring-2",
+                            "focus:ring-yellow/40",
+                            "focus:border-yellow/70",
+                        ]}
+                    >
+                        <option value="" selected disabled>Selecciona una opcion</option>
+                        <option value="perder-grasa">Perder grasa</option>
+                        <option value="ganar-masa">Ganar masa muscular</option>
+                        <option value="mejorar-salud">Mejorar salud general</option>
+                        <option value="nutricion-deportiva">Nutricion deportiva</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class:list={["mt-5"]}>
+                <label for="mensaje" class:list={["block", "text-brown/80", "font-semibold", "mb-2"]}>
+                    Cuentame un poco sobre ti
+                </label>
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    required
+                    placeholder="Escribe aqui tu mensaje..."
+                    class:list={[
+                        "w-full",
+                        "rounded-xl",
+                        "border",
+                        "border-brown/25",
+                        "bg-crema1/80",
+                        "px-4",
+                        "py-3",
+                        "outline-none",
+                        "resize-none",
+                        "focus:ring-2",
+                        "focus:ring-yellow/40",
+                        "focus:border-yellow/70",
+                    ]}
+                ></textarea>
+            </div>
+
+            <div class:list={["mt-5", "flex", "items-start", "gap-3"]}>
+                <input
+                    id="acepto"
+                    name="acepto"
+                    type="checkbox"
+                    required
+                    class:list={["mt-1", "accent-yellow", "h-4", "w-4"]}
+                />
+                <label for="acepto" class:list={["text-sm", "text-brown/70"]}>
+                    Acepto ser contactado(a) para recibir informacion sobre consultas y seguimiento nutricional.
+                </label>
+            </div>
+
+            <button
+                type="submit"
+                class:list={[
+                    "mt-7",
+                    "w-full",
+                    "sm:w-auto",
+                    "flex",
+                    "justify-center",
+                    "mx-auto",
+                    "items-center",
+                    "bg-brown/40",
+                    "text-white",
+                    "font-semibold",
+                    "px-8",
+                    "py-3",
+                    "rounded-xl",
+                    "hover:bg-brown/60",
+                    "hover:scale-[1.01]",
+                    "transition-all",
+                    "duration-200",
+                ]}
+            >
+                {textoBoton}
+            </button>
+        </form>
+    </div>
+
+    <script define:vars={{ numeroWhatsapp }}>
+        const form = document.querySelector("#contactame-form");
+
+        if (form) {
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                const formData = new FormData(form);
+                const nombre = String(formData.get("nombre") ?? "").trim();
+                const email = String(formData.get("email") ?? "").trim();
+                const telefono = String(formData.get("telefono") ?? "").trim();
+                const objetivo = String(formData.get("objetivo") ?? "").trim();
+                const mensaje = String(formData.get("mensaje") ?? "").trim();
+                const acepto = formData.get("acepto") ? "Si" : "No";
+
+                const texto = [
+                    "Hola, quiero recibir informacion sobre una asesoria nutricional.",
+                    `Nombre: ${nombre}`,
+                    `Correo: ${email}`,
+                    `Telefono: ${telefono || "No proporcionado"}`,
+                    `Objetivo principal: ${objetivo}`,
+                    `Mensaje: ${mensaje}`,
+                    `Acepto ser contactado(a): ${acepto}`,
+                ].join("\n");
+
+                const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(texto)}`;
+                window.open(url, "_blank", "noopener,noreferrer");
+            });
+        }
+    </script>
+</section>
