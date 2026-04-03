@@ -34,7 +34,7 @@ const { nombre, descripcion, badges } = Astro.props;
     ]}
   >
     <h3 class:list={["text-left", "text-4xl", "pm-4", "mb-4", "font-serif", "font-black", "text-brown/80"]}>{nombre}</h3>
-    <p class:list={["mb-8"]}>{descripcion}</p>
+    <p class:list={["mb-8", "text-brown/70"]}>{descripcion}</p>
     <div class:list={["flex", "gap-2", "flex-wrap"]}>
       {badges && badges.map(badge => (
         <Badge text={badge.text} color={badge.color} />

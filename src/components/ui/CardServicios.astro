@@ -29,8 +29,8 @@ const { titulo, descripcion, botonTexto, hrefBoton, icono } = Astro.props;
   <div class:list={["flex", "justify-center", "w-fit", "mx-auto", "rounded-full", "p-2", "bg-amber-950/30", "mb-2"]}>
     <Iconos nombre={icono} size={48} color=white />
   </div>
-  <h3 class:list={["text-center", "mb-3", "mx-6", "font-bold", "text-lg"]}>{titulo}</h3>
-  <p class:list={["text-center", "mb-3"]}>{descripcion}</p>
+  <h3 class:list={["text-center", "mb-3", "mx-6", "font-bold", "text-lg", "text-brown/80"]}>{titulo}</h3>
+  <p class:list={["text-center", "mb-3", "text-brown/60"]}>{descripcion}</p>
   <a
     class:list={[
       "absolute",
@@ -39,8 +39,9 @@ const { titulo, descripcion, botonTexto, hrefBoton, icono } = Astro.props;
       "-translate-x-1/2",
       "left-1/2",
       "top-64",
-      "bg-amber-950/20",
+      "bg-amber-950/30",
       "px-3",
+      "text-white",
       "py-1",
       "rounded-2xl",
       "font-bold",

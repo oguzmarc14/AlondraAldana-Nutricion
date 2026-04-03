@@ -1,5 +1,7 @@
+
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Great+Vibes&family=Oswald:wght@200..700&family=Pacifico&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playwrite+DE+SAS:wght@100..400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Great+Vibes&family=Mea+Culpa&family=Noto+Sans+Meroitic&family=Oswald:wght@200..700&family=Pacifico&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playwrite+DE+SAS:wght@288&display=swap');
+
 
 @theme {
   --color-brown: #423431;
@@ -10,12 +12,22 @@
   --color-crema1: #EFD8BC;
   --color-crema2: #F6E4C9;
   --color-crema3: #EAD0AA;
-  --color-crema4: #E1C7A4
+  --color-crema4: #E1C7A4;
 
   /* Tipografías */
   --font-sans: "Oswald", sans-serif;
   --font-serif: "Playfair Display SC", serif;
   --font-script: "Great Vibes", cursive;
   --font-pacifico: "Pacifico", cursive;
+  --font-family: "Satisfy", cursive;
+  --font-meaculpa: "Mea Culpa", cursive;
 }
+
+/* Clase para aplicar la fuente Mea Culpa */
+.font-meaculpa {
+  font-family: var(--font-family, "Mea Culpa", cursive);
+}
+
+
+
 

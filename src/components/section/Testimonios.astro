@@ -29,24 +29,23 @@ const testimonios = [
 ];
 ---
 
-<section
-  class:list={[
-    "container",
-    "flex",
-    "flex-col",
-    "items-center",
-    "justify-center",
-    "mx-auto",
-  ]}
+<div
+  class:list={["bg-gradient-to-r", "from-crema1", "via-crema2", "to-crema3"]}
 >
-  <div class:list={["w-full"]}>
+  <section class:list={["w-full", "container", "mx-auto", "px-4"]}>
     <h2
       class:list={[
+        "container",
         "text-4xl md:text-5xl",
         "text-center",
         "text-brown/80",
+        "font-serif",
         "font-bold",
-        "mt-8"
+        "flex",
+        "flex-col",
+        "items-center",
+        "justify-center",
+        "mx-auto",
       ]}
     >
       Testimonios
@@ -57,20 +56,12 @@ const testimonios = [
         "text-center",
         "text-brown/60",
         "mt-2",
-
       ]}
     >
       Esto dicen los pacientes acerca de mi y de mi servicio.
     </p>
     <slot>
-      <div
-        class:list={[
-          "flex",
-          "mt-12", 
-          "flex-wrap",
-          "gap-y-6"
-        ]}
-      >
+      <div class:list={["flex", "mt-12", "flex-wrap", "gap-y-6"]}>
         {
           testimonios.map((testimonio) => (
             <CardTestimonios
@@ -82,5 +73,5 @@ const testimonios = [
         }
       </div>
     </slot>
-  </div>
-</section>
+  </section>
+</div>
