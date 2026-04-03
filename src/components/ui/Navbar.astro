@@ -1,20 +1,28 @@
-<nav class:list={["absolute", "w-full", "top-4", "z-50", "fixed"]}>
+<nav class:list={["absolute", "w-full", "z-50", "fixed"]}>
   <div
     class:list={[
       "lg:w-3/4 md:w-3/4 2xl:w-5/7",
-      "bg-gradient-to-tl",
-      "border-2",
-      "border-brown/50",
-      "from-crema3/60",
-      "via-crema1/50",
-      "to-crema3/60",
       "grid",
       "mx-auto",
       "p-5",
       "rounded-full",
     ]}
   >
-    <ul class:list={["grid", "grid-cols-3", "justify-between", "w-full"]}>
+    <ul
+      class:list={[
+        "grid",
+        "grid-cols-3",
+        "justify-between",
+        "w-full",
+        "border-2",
+        "bg-gradient-to-tl",
+        "border-brown/50",
+        "from-crema3/60",
+        "via-crema1/50",
+        "to-crema3/60",
+        "rounded-full",
+      ]}
+    >
       <li
         class:list={[
           "w-full",
@@ -30,7 +38,7 @@
         <img
           src="/images/logo.jpg"
           alt="logo de nutricion alondra aldana"
-          class:list={["w-8 sm:w-12 md:w-16", "rounded-full"]}
+          class:list={["w-8 sm:w-8 md:w-13", "rounded-full"]}
         />
         <a
           href="/"
@@ -50,6 +58,7 @@
           "justify-center",
           "flex",
           "-ml-5",
+          "gap-1",
           "md:-ml-7 lg:-ml-4 2xl:-ml-8",
         ]}
       >
@@ -57,8 +66,8 @@
           src="/images/facebook.png"
           alt="logo de facebook"
           class:list={[
-            "w-8 sm:w-12 md:w-16",
-            "h-8 sm:h-12 md:h-15",
+            "w-6 sm:w-10 md:w-10",
+            "h-6 sm:h-10 md:h-10",
             "hover:scale-110",
             "duration-150",
           ]}
@@ -67,8 +76,8 @@
           src="/images/instagram.png"
           alt="logo de instagram"
           class:list={[
-            "w-9 sm:w-14 md:w-18",
-            "h-7 sm:h-11 md:h-[55px]",
+            "w-7 sm:w-12 md:w-11",
+            "h-5 sm:h-9 md:h-9",
             "hover:scale-110",
             "duration-150",
             "-ml-2",
@@ -86,7 +95,7 @@
           "-ml-6",
           "lg:gap-3 xl:gap-4",
           "pr-2",
-          "text-brown/70"
+          "text-brown/70",
         ]}
       >
         <a
