@@ -10,7 +10,7 @@ const {nombre, descripcion, img} = Astro.props as Props;
 ---
 
 <article class:list={["flex", "justify-center", "flex-col", "text-center", "bg-crema3", "rounded-lg", "p-4", "mx-4", "max-w-70", "md:grid-rows-2", "mx-auto", "border-2", "border-brown/50", "shadow-lg"]}>
-    <h3 class:list={["mb-4", "font-semibold", "text-lg", "text-brown/80"]}>{nombre}</h3>
+    <h3 class:list={["mb-4", "font-semibold", "text-2xl", "text-brown/80", "font-family"]}>{nombre}</h3>
     <p class:list={["mb-4", "text-base", "text-brown/60"]}>{descripcion}</p>
     <img src={img} alt={nombre} />
 </article>
