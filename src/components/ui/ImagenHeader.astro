@@ -3,12 +3,13 @@ import BotonHeader from "./BotonHeader.astro";
 
 interface Props {
   h1Title: string;
+  p: string;
   h2Title: string;
   imageSrc: string;
   imageAlt: string;
 }
 
-const { h1Title, h2Title, imageSrc, imageAlt } = Astro.props;
+const { h1Title, p, h2Title, imageSrc, imageAlt } = Astro.props;
 ---
 
 <div id="home" class:list={["relative", "flex", "h-screen", "w-full", "overflow-hidden"]}>
@@ -30,7 +31,8 @@ const { h1Title, h2Title, imageSrc, imageAlt } = Astro.props;
     ]}
   >
     <h1 class:list={["font-bold", "text-2xl", "w-3/7", "sm:font-semibold", "text-brown/90", "mt-8", "sm:mt-0", "md:text-4xl lg:text-6xl sm:text-4xl"]}>{h1Title}</h1>
-    <h2 class:list={["w-3/7", "text-brown/80", "sm:text-lg", "text-sm md:text-lg lg:text-3xl"]}>
+    <p class:list={["w-3/7", "text-brown/50", "sm:text-lg", "text-sm md:text-lg lg:text-3xl"]}>{p}</p>
+    <h2 class:list={["w-3/7", "text-brown/80", "sm:text-lg", "-mt-4", "text-sm md:text-lg lg:text-3xl"]}>
       {h2Title}
     </h2>
     <slot>
