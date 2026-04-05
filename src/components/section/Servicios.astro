@@ -42,12 +42,7 @@ const servicios = [
 ---
 
 <div
-  class:list={[
-    "bg-gradient-to-r",
-    "from-crema1",
-    "via-crema2",
-    "to-crema3",
-  ]}
+  class:list={["bg-gradient-to-r", "from-crema1", "via-crema2", "to-crema3"]}
 >
   <section id="servicios" class:list={["container", "mx-auto", "py-5", "px-4"]}>
     <h2
@@ -60,9 +55,21 @@ const servicios = [
         "font-bold",
       ]}
     >
-     Adquiere Un Plan de Alimentación con Alondra Aldana y Accede a los Siguientes Servicios: 
+      ¿Por qué elegir a Alondra Aldana?
     </h2>
-    <p class:list={["mb-15", "mt-4", "w-3/4", "mx-auto", "text-center", "text-brown/60"]}>Estos son algunos de los servicios que podras encontrar en un plan de alimentacion</p>
+    <p
+      class:list={[
+        "mb-15",
+        "mt-4",
+        "w-3/4",
+        "mx-auto",
+        "text-center",
+        "text-brown/60",
+      ]}
+    >
+      Una atención nutricional personalizada, enfocada en resultados reales y
+      hábitos sostenibles.
+    </p>
     <div class:list={["flex", "flex-wrap", "gap-8", "justify-center"]}>
       {
         servicios.map((servicio) => (
