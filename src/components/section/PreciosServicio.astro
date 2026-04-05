@@ -1,0 +1,80 @@
+---
+import CardPrecios from "../ui/CardPrecios.astro";
+
+const precios = [
+  {
+    titulo: "Plan Básico",
+    descripcion: "Consulta inicial y plan de alimentación personalizado.",
+    botonTexto: "Quiero este Plan",
+    hrefBoton: "#",
+    icono: "checklist",
+    precio: "$350 MXN/mes",
+  },
+  {
+    titulo: "Plan Duo",
+    descripcion: "Consulta inicial para dos personas y plan de alimentación personalizado.",
+    botonTexto: "Quiero este Plan",
+    hrefBoton: "#",
+    icono: "checklist",
+    precio: "$500 MXN/mes",
+  },
+  {
+    titulo: "Plan Premium",
+    descripcion: "Consulta inicial, seguimiento semanal y plan de alimentación personalizado.",
+    botonTexto: "Quiero este Plan",
+    hrefBoton: "#",
+    icono: "checklist",
+    precio: "$500 MXN/mes",
+  },
+];
+---
+
+<section
+  class:list={["bg-gradient-to-r", "from-crema1", "via-crema2", "to-crema3"]}
+>
+  <div class:list="container mx-auto py-16 px-4">
+    <h2
+      class:list={[
+        "text-center",
+        "text-4xl",
+        "sm:text-5xl",
+        "font-bold",
+        "font-serif",
+        "text-brown/80",
+        "sm:pt-14",
+        "pt-10",
+        "pb-2",
+      ]}
+    >
+      Precios de plan mensual
+    </h2>
+    <p
+      class:list={[
+        "text-base md:text-base",
+        "text-center",
+        "text-brown/60",
+        "mt-2",
+      ]}
+    >
+      Estos son los precios de nuestros planes de alimentación personalizados.
+      Elige el que mejor se adapte a tus necesidades y objetivos de salud.
+    </p>
+
+    <article
+      class:list={["flex", "flex-wrap", "gap-8", "justify-center", "mt-12"]}
+    >
+      {
+        precios.map((plan) => (
+          <CardPrecios
+            titulo={plan.titulo}
+            descripcion={plan.descripcion}
+            icono="checklist"
+            botonTexto={plan.botonTexto}
+            precio={plan.precio}
+            hrefBoton="#"
+          />
+        ))
+      }
+    </article>
+  </div>
+</section>

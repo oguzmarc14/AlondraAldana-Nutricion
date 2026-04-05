@@ -1,0 +1,57 @@
+---
+import Iconos from "./Iconos.astro";
+
+interface Props {
+  titulo: string;
+  descripcion: string;
+  botonTexto: string;
+  hrefBoton: string;
+  icono: string;
+  precio: string;
+}
+
+const { titulo, descripcion, botonTexto, hrefBoton, icono, precio } = Astro.props;
+
+---
+
+<article
+  class:list={[
+    "bg-yellow/20",
+    "p-8",
+    "max-w-80",
+    "relative",
+    "min-h-80",
+    "rounded-2xl",
+    "border-crema1",
+    "border-4",
+  ]}
+>
+  {/* Icono */}
+  <div class:list={["flex", "justify-center", "w-fit", "mx-auto", "rounded-2xl", "p-2", "bg-amber-950/30", "mb-2"]}>
+    <Iconos nombre={icono} size={48} color=white />
+  </div>
+  <h3 class:list={["text-center", "mb-3", "mx-6", "font-bold", "text-2xl", "text-brown/80", "font-family"]}>{titulo}</h3>
+  <p class:list={["text-center", "mb-3", "text-brown/60"]}>{descripcion}</p>
+  <p class:list={["text-center", "text-brown", "border-b-2", "border-brown/20", "w-fit", "mx-auto"]}>{precio}</p>
+  <a
+    class:list={[
+      "absolute",
+      "justify-center",
+      "flex",
+      "-translate-x-1/2",
+      "left-1/2",
+      "top-64",
+      "bg-amber-950/30",
+      "px-3",
+      "text-white",
+      "py-1",
+      "rounded-2xl",
+      "font-bold",
+      "hover:scale-105",
+      "mt-2"
+    ]}
+    href={hrefBoton}
+  >
+    {botonTexto}
+  </a>
+</article>
