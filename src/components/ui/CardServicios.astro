@@ -10,42 +10,107 @@ interface Props {
 }
 
 const { titulo, descripcion, botonTexto, hrefBoton, icono } = Astro.props;
-
 ---
 
 <article
   class:list={[
-    "bg-yellow/20",
-    "p-8",
-    "max-w-80",
+    "group",
     "relative",
-    "min-h-80",
-    "rounded-full",
-    "border-crema1",
-    "border-4",
+    "overflow-hidden",
+    "flex",
+    "min-h-[330px]",
+    "max-w-80",
+    "flex-col",
+    "items-center",
+    "justify-between",
+    "rounded-[2rem]",
+    "border",
+    "border-white/40",
+    "bg-white/35",
+    "p-8",
+    "text-center",
+    "backdrop-blur-xl",
+    "shadow-[0_20px_55px_rgba(94,73,53,0.14)]",
+    "transition-all",
+    "duration-500",
+    "hover:-translate-y-2",
+    "hover:shadow-[0_30px_75px_rgba(94,73,53,0.22)]",
   ]}
 >
-  {/* Icono */}
-  <div class:list={["flex", "justify-center", "w-fit", "mx-auto", "rounded-full", "p-2", "bg-amber-950/30", "mb-2"]}>
-    <Iconos nombre={icono} size={48} color=white />
+  <div
+    class="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-[#D8D49A]/30 blur-3xl transition-all duration-500 group-hover:scale-125"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-[#B8AF55]/10 opacity-80"
+  ></div>
+
+  <div class="relative z-10 flex flex-col items-center">
+    <div
+      class:list={[
+        "mb-5",
+        "flex",
+        "h-20",
+        "w-20",
+        "items-center",
+        "justify-center",
+        "rounded-2xl",
+        "border",
+        "border-white/45",
+        "bg-[#8B6F47]/35",
+        "text-white",
+        "shadow-[0_14px_30px_rgba(94,73,53,0.18)]",
+        "transition-all",
+        "duration-500",
+        "group-hover:scale-110",
+        "group-hover:rotate-3",
+      ]}
+    >
+      <Iconos nombre={icono} size={46} color="white" />
+    </div>
+
+    <h3
+      class:list={[
+        "mb-4",
+        "font-serif",
+        "text-2xl",
+        "font-bold",
+        "leading-tight",
+        "text-brown/85",
+      ]}
+    >
+      {titulo}
+    </h3>
+
+    <div
+      class="mb-5 h-[2px] w-14 rounded-full bg-gradient-to-r from-[#B8AF55] to-[#D8D49A]"
+    ></div>
+
+    <p class:list={["text-base", "leading-relaxed", "text-brown/65"]}>
+      {descripcion}
+    </p>
   </div>
-  <h3 class:list={["text-center", "mb-3", "mx-6", "font-bold", "text-2xl", "text-brown/80", "font-family"]}>{titulo}</h3>
-  <p class:list={["text-center", "mb-3", "text-brown/60"]}>{descripcion}</p>
+
   <a
     class:list={[
-      "absolute",
+      "relative",
+      "z-10",
+      "mt-8",
+      "inline-flex",
+      "items-center",
       "justify-center",
-      "flex",
-      "-translate-x-1/2",
-      "left-1/2",
-      "top-64",
-      "bg-amber-950/30",
-      "px-3",
-      "text-white",
-      "py-1",
-      "rounded-2xl",
+      "rounded-full",
+      "bg-[#8B6F47]/75",
+      "px-5",
+      "py-2.5",
+      "text-sm",
       "font-bold",
-      "hover:scale-105"
+      "text-white",
+      "shadow-[0_12px_28px_rgba(94,73,53,0.18)]",
+      "transition-all",
+      "duration-300",
+      "hover:scale-105",
+      "hover:bg-[#8B6F47]",
     ]}
     href={hrefBoton}
   >

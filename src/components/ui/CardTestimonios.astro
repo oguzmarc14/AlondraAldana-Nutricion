@@ -6,12 +6,85 @@ interface Props {
   alt?: string;
 }
 
-const {nombre, descripcion, img} = Astro.props as Props; 
+const { nombre, descripcion, img, alt = nombre } = Astro.props as Props;
 ---
 
-<article class:list={["flex", "justify-center", "flex-col", "text-center", "bg-crema3", "rounded-lg", "p-4", "mx-4", "max-w-70", "md:grid-rows-2", "mx-auto", "border-2", "border-brown/50", "shadow-lg"]}>
-    <h3 class:list={["mb-4", "font-semibold", "text-2xl", "text-brown/80", "font-family"]}>{nombre}</h3>
-    <p class:list={["mb-4", "text-base", "text-brown/60"]}>{descripcion}</p>
-    <img src={img} alt={nombre} />
-</article>
+<article
+  class:list={[
+    "group",
+    "relative",
+    "overflow-hidden",
 
+    "max-w-[340px]",
+    "mx-auto",
+
+    "rounded-[28px]",
+
+    "border",
+    "border-white/35",
+
+    "bg-white/35",
+    "backdrop-blur-xl",
+
+    "p-7",
+
+    "shadow-[0_20px_50px_rgba(94,73,53,0.12)]",
+
+    "transition-all",
+    "duration-500",
+
+    "hover:-translate-y-2",
+    "hover:shadow-[0_30px_70px_rgba(94,73,53,0.20)]",
+  ]}
+>
+  <!-- Glow decorativo -->
+  <div
+    class="absolute -top-12 -right-12 h-36 w-36 rounded-full bg-[#D8D49A]/25 blur-3xl transition-all duration-500 group-hover:scale-125"
+  ></div>
+
+  <!-- Comillas -->
+  <div
+    class="absolute top-4 left-5 text-6xl font-serif text-[#B8AF55]/20 leading-none"
+  >
+    "
+  </div>
+
+  <div class="relative z-10 flex flex-col items-center text-center">
+    <img
+      src={img}
+      alt={alt}
+      class="mb-5 h-24 w-24 rounded-full object-cover border-4 border-white/60 shadow-lg"
+    />
+
+    <h3
+      class:list={[
+        "font-serif",
+        "text-2xl",
+        "font-bold",
+        "text-brown/85",
+        "mb-3",
+      ]}
+    >
+      {nombre}
+    </h3>
+
+    <div
+      class="mb-5 h-[2px] w-14 rounded-full bg-gradient-to-r from-[#B8AF55] to-[#D8D49A]"
+    ></div>
+
+    <p
+      class:list={[
+        "text-base",
+        "leading-relaxed",
+        "text-brown/65",
+      ]}
+    >
+      {descripcion}
+    </p>
+
+    <!-- Estrellas -->
+    <div class="mt-5 flex gap-1 text-[#B8AF55]">
+      ★★★★★
+    </div>
+  </div>
+</article>

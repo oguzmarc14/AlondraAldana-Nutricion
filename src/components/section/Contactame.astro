@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  titulo = "Contactame",
+  titulo = "Contáctame",
   descripcion = "Da el primer paso para mejorar tu salud. Completa este formulario y me pondré en contacto contigo para comenzar tu proceso.",
   numeroWhatsapp = "524759513349",
   textoBoton = "Quiero empezar mi cambio",
@@ -16,62 +16,34 @@ const {
 
 <section
   id="contacto"
-  class:list={[
-    "bg-gradient-to-r",
-    "from-crema1",
-    "via-crema2",
-    "to-crema3",
-    "py-16",
-    "px-4",
-  ]}
+  class="relative overflow-hidden bg-gradient-to-b from-crema3 via-crema2 to-crema1 px-4 py-24"
 >
-  <div class:list={["container", "mx-auto", "max-w-4xl"]}>
-    <h2
-      class:list={[
-        "text-4xl",
-        "sm:text-5xl",
-        "font-serif",
-        "font-bold",
-        "text-center",
-        "text-brown/80",
-      ]}
-    >
-      {titulo}
-    </h2>
-    <p
-      class:list={[
-        "text-center",
-        "text-brown/60",
-        "mt-3",
-        "mb-10",
-        "w-full",
-        "sm:w-3/5",
-        "mx-auto",
-      ]}
-    >
-      {descripcion}
-    </p>
+  
+  <div class="container relative z-10 mx-auto max-w-4xl">
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="inline-flex rounded-full border border-brown/15 bg-white/35 px-5 py-2 text-xs font-bold uppercase tracking-[0.22em] text-brown/55 backdrop-blur-md shadow-[0_8px_24px_rgba(94,73,53,0.10)]">
+        Agenda tu consulta
+      </span>
+
+      <h2 class="mt-6 font-serif text-4xl font-bold text-brown/85 sm:text-5xl md:text-6xl">
+        {titulo}
+      </h2>
+
+      <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-brown/60 md:text-lg">
+        {descripcion}
+      </p>
+    </div>
 
     <form
       id="contactame-form"
       data-whatsapp-number={numeroWhatsapp}
-      class:list={[
-        "bg-crema3",
-        "backdrop-blur-sm",
-        "border",
-        "border-brown/15",
-        "rounded-3xl",
-        "p-6",
-        "sm:p-8",
-        "shadow-lg",
-      ]}
+      class="relative mt-12 overflow-hidden rounded-[2rem] border border-white/40 bg-white/35 p-6 shadow-[0_25px_70px_rgba(94,73,53,0.15)] backdrop-blur-xl sm:p-8"
     >
-      <div class:list={["grid", "grid-cols-1", "md:grid-cols-2", "gap-5"]}>
+      <div class="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-[#D8D49A]/25 blur-3xl"></div>
+
+      <div class="relative z-10 grid grid-cols-1 gap-5 md:grid-cols-2">
         <div>
-          <label
-            for="nombre"
-            class:list={["block", "text-brown/80", "font-semibold", "mb-2"]}
-          >
+          <label for="nombre" class="mb-2 block font-semibold text-brown/80">
             Nombre completo
           </label>
           <input
@@ -79,29 +51,14 @@ const {
             name="nombre"
             type="text"
             required
-            placeholder="Ej. Ana Perez"
-            class:list={[
-              "w-full",
-              "rounded-xl",
-              "border",
-              "border-brown/25",
-              "bg-crema1/80",
-              "px-4",
-              "py-3",
-              "outline-none",
-              "focus:ring-2",
-              "focus:ring-yellow/40",
-              "focus:border-yellow/70",
-            ]}
+            placeholder="Ej. Ana Pérez"
+            class="w-full rounded-xl border border-brown/20 bg-white/55 px-4 py-3 shadow-sm outline-none backdrop-blur-sm transition-all duration-300 focus:border-yellow/70 focus:ring-2 focus:ring-yellow/40"
           />
         </div>
 
         <div>
-          <label
-            for="email"
-            class:list={["block", "text-brown/80", "font-semibold", "mb-2"]}
-          >
-            Correo electronico
+          <label for="email" class="mb-2 block font-semibold text-brown/80">
+            Correo electrónico
           </label>
           <input
             id="email"
@@ -109,150 +66,73 @@ const {
             type="email"
             required
             placeholder="tucorreo@email.com"
-            class:list={[
-              "w-full",
-              "rounded-xl",
-              "border",
-              "border-brown/25",
-              "bg-crema1/80",
-              "px-4",
-              "py-3",
-              "outline-none",
-              "focus:ring-2",
-              "focus:ring-yellow/40",
-              "focus:border-yellow/70",
-            ]}
+            class="w-full rounded-xl border border-brown/20 bg-white/55 px-4 py-3 shadow-sm outline-none backdrop-blur-sm transition-all duration-300 focus:border-yellow/70 focus:ring-2 focus:ring-yellow/40"
           />
         </div>
 
         <div>
-          <label
-            for="telefono"
-            class:list={["block", "text-brown/80", "font-semibold", "mb-2"]}
-          >
-            Telefono
+          <label for="telefono" class="mb-2 block font-semibold text-brown/80">
+            Teléfono
           </label>
           <input
             id="telefono"
             name="telefono"
             type="tel"
             placeholder="Ej. 4491234567"
-            class:list={[
-              "w-full",
-              "rounded-xl",
-              "border",
-              "border-brown/25",
-              "bg-crema1/80",
-              "px-4",
-              "py-3",
-              "outline-none",
-              "focus:ring-2",
-              "focus:ring-yellow/40",
-              "focus:border-yellow/70",
-            ]}
+            class="w-full rounded-xl border border-brown/20 bg-white/55 px-4 py-3 shadow-sm outline-none backdrop-blur-sm transition-all duration-300 focus:border-yellow/70 focus:ring-2 focus:ring-yellow/40"
           />
         </div>
 
         <div>
-          <label
-            for="objetivo"
-            class:list={["block", "text-brown/80", "font-semibold", "mb-2"]}
-          >
+          <label for="objetivo" class="mb-2 block font-semibold text-brown/80">
             Objetivo principal
           </label>
           <select
             id="objetivo"
             name="objetivo"
             required
-            class:list={[
-              "w-full",
-              "rounded-xl",
-              "border",
-              "border-brown/25",
-              "bg-crema1/80",
-              "px-4",
-              "py-3",
-              "outline-none",
-              "focus:ring-2",
-              "focus:ring-yellow/40",
-              "focus:border-yellow/70",
-              "text-brown/80",
-            ]}
+            class="w-full rounded-xl border border-brown/20 bg-white/55 px-4 py-3 text-brown/80 shadow-sm outline-none backdrop-blur-sm transition-all duration-300 focus:border-yellow/70 focus:ring-2 focus:ring-yellow/40"
           >
-            <option value="" selected disabled>Selecciona una opcion</option>
+            <option value="" selected disabled>Selecciona una opción</option>
             <option value="perder-grasa">Perder grasa</option>
             <option value="ganar-masa">Ganar masa muscular</option>
             <option value="mejorar-salud">Mejorar salud general</option>
-            <option value="nutricion-deportiva">Nutricion deportiva</option>
+            <option value="nutricion-deportiva">Nutrición deportiva</option>
             <option value="otro">Otro</option>
           </select>
         </div>
       </div>
 
-      <div class:list={["mt-5"]}>
-        <label
-          for="mensaje"
-          class:list={["block", "text-brown/80", "font-semibold", "mb-2"]}
-        >
-          Cuentame un poco sobre ti
+      <div class="relative z-10 mt-5">
+        <label for="mensaje" class="mb-2 block font-semibold text-brown/80">
+          Cuéntame un poco sobre ti
         </label>
         <textarea
           id="mensaje"
           name="mensaje"
           rows="5"
           required
-          placeholder="Escribe aqui tu mensaje..."
-          class:list={[
-            "w-full",
-            "rounded-xl",
-            "border",
-            "border-brown/25",
-            "bg-crema1/80",
-            "px-4",
-            "py-3",
-            "outline-none",
-            "resize-none",
-            "focus:ring-2",
-            "focus:ring-yellow/40",
-            "focus:border-yellow/70",
-          ]}></textarea>
+          placeholder="Escribe aquí tu mensaje..."
+          class="w-full resize-none rounded-xl border border-brown/20 bg-white/55 px-4 py-3 shadow-sm outline-none backdrop-blur-sm transition-all duration-300 focus:border-yellow/70 focus:ring-2 focus:ring-yellow/40"></textarea>
       </div>
 
-      <div class:list={["mt-5", "flex", "items-start", "gap-3"]}>
+      <div class="relative z-10 mt-5 flex items-start gap-3">
         <input
           id="acepto"
           name="acepto"
           type="checkbox"
           required
-          class:list={["mt-1", "accent-yellow", "h-4", "w-4"]}
+          class="mt-1 h-4 w-4 accent-yellow"
         />
-        <label for="acepto" class:list={["text-sm", "text-brown/70"]}>
-          Acepto ser contactado(a) para recibir informacion sobre consultas y
+        <label for="acepto" class="text-sm leading-relaxed text-brown/70">
+          Acepto ser contactado(a) para recibir información sobre consultas y
           seguimiento nutricional.
         </label>
       </div>
 
       <button
         type="submit"
-        class:list={[
-          "mt-7",
-          "w-full",
-          "sm:w-auto",
-          "flex",
-          "justify-center",
-          "mx-auto",
-          "items-center",
-          "bg-brown/40",
-          "text-white",
-          "font-semibold",
-          "px-8",
-          "py-3",
-          "rounded-xl",
-          "hover:bg-brown/60",
-          "hover:scale-[1.01]",
-          "transition-all",
-          "duration-200",
-        ]}
+        class="relative z-10 mx-auto mt-8 flex items-center justify-center rounded-full bg-gradient-to-r from-[#8B6F47] to-[#A58A5D] px-10 py-4 font-bold text-white shadow-[0_15px_35px_rgba(94,73,53,0.25)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_20px_45px_rgba(94,73,53,0.35)]"
       >
         {textoBoton}
       </button>
@@ -272,13 +152,13 @@ const {
         const telefono = String(formData.get("telefono") ?? "").trim();
         const objetivo = String(formData.get("objetivo") ?? "").trim();
         const mensaje = String(formData.get("mensaje") ?? "").trim();
-        const acepto = formData.get("acepto") ? "Si" : "No";
+        const acepto = formData.get("acepto") ? "Sí" : "No";
 
         const texto = [
-          "Hola, quiero recibir informacion sobre una asesoria nutricional.",
+          "Hola, quiero recibir información sobre una asesoría nutricional.",
           `Nombre: ${nombre}`,
           `Correo: ${email}`,
-          `Telefono: ${telefono || "No proporcionado"}`,
+          `Teléfono: ${telefono || "No proporcionado"}`,
           `Objetivo principal: ${objetivo}`,
           `Mensaje: ${mensaje}`,
           `Acepto ser contactado(a): ${acepto}`,

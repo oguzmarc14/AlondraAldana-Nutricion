@@ -4,8 +4,16 @@ import CardTexto from "../ui/cardTexto.astro";
 ---
 
 <section
-  class:list={["bg-gradient-to-r", "from-crema1", "via-crema2", "to-crema3"]}
+  class:list={["bg-gradient-to-b", "from-crema2", "via-crema1", "to-crema3"]}
 >
+  <div class="text-center">
+    <span
+      class="inline-flex mt-8 rounded-full border border-brown/15 bg-white/35 px-5 py-2 text-xs font-bold uppercase tracking-[0.22em] text-brown/55 backdrop-blur-md shadow-[0_8px_24px_rgba(94,73,53,0.10)]"
+    >
+      Sobre mí
+    </span>
+  </div>
+  
   <h2
     class:list={[
       "text-center",
@@ -32,7 +40,9 @@ import CardTexto from "../ui/cardTexto.astro";
       "w-3/5",
     ]}
   >
-    Conoce a Alondra Aldana, nutrióloga profesional en Encarnación de Díaz, y descubre su experiencia, enfoque integral y compromiso para ayudarte a mejorar tu salud y tu relación con la comida.
+    Conoce a Alondra Aldana, nutrióloga profesional en Encarnación de Díaz, y
+    descubre su experiencia, enfoque integral y compromiso para ayudarte a
+    mejorar tu salud y tu relación con la comida.
   </p>
   <article
     class:list={[
