@@ -12,7 +12,10 @@ interface Props {
 const { h1Title, p, h2Title, imageSrc, imageAlt } = Astro.props;
 ---
 
-<div id="home" class:list={["relative", "flex", "h-screen", "w-full", "overflow-hidden"]}>
+<div
+  id="home"
+  class:list={["relative", "flex", "h-screen", "w-full", "overflow-hidden"]}
+>
   <img
     src={imageSrc}
     alt={imageAlt}
@@ -27,26 +30,57 @@ const { h1Title, p, h2Title, imageSrc, imageAlt } = Astro.props;
       "flex-col",
       "justify-center",
       "gap-5",
-      "left-10"
+      "left-10",
     ]}
   >
-    <h1 class:list={["font-bold", "text-2xl", "w-3/7", "sm:font-semibold", "text-brown/90", "mt-8", "sm:mt-0", "md:text-4xl lg:text-6xl sm:text-4xl"]}>{h1Title}</h1>
-    <p class:list={["w-3/7", "text-brown/50", "sm:text-lg", "text-sm md:text-lg lg:text-3xl"]}>{p}</p>
-    <h2 class:list={["w-3/7", "text-brown/80", "sm:text-lg", "-mt-4", "text-sm md:text-lg lg:text-3xl"]}>
+    <h1
+      class:list={[
+        "font-bold",
+        "text-2xl",
+        "w-3/7",
+        "sm:font-semibold",
+        "text-brown/90",
+        "mt-8",
+        "sm:mt-0",
+        "md:text-4xl lg:text-6xl sm:text-4xl",
+      ]}
+    >
+      {h1Title}
+    </h1>
+    <p
+      class:list={[
+        "w-3/7",
+        "text-brown/50",
+        "sm:text-lg",
+        "text-sm md:text-lg lg:text-3xl",
+      ]}
+    >
+      {p}
+    </p>
+    <h2
+      class:list={[
+        "w-3/7",
+        "text-brown/80",
+        "sm:text-lg",
+        "-mt-4",
+        "text-sm md:text-lg lg:text-3xl",
+      ]}
+    >
       {h2Title}
     </h2>
     <slot>
       <div class:list={["flex", "sm:flex-row", "gap-2", "flex-col"]}>
-      <BotonHeader
-        botonTexto="Agenda tu cita"
-        hrefBoton="Mis Servicios"
-        botonPrimario={true}
-      />
-      <BotonHeader
-        botonTexto="Servicios"
-        hrefBoton="/servicios"
-        botonPrimario={false}
-      />
+        <BotonHeader
+          botonTexto="Agenda tu cita"
+          hrefBoton="https://wa.me/524759513349?text=Hola%20Alondra%20Aldana,%20quiero%20agendar%20una%20cita."
+          botonPrimario={true}
+        />
+
+        <BotonHeader
+          botonTexto="Servicios"
+          hrefBoton="#servicios"
+          botonPrimario={false}
+        />
       </div>
     </slot>
   </div>

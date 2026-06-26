@@ -6,43 +6,61 @@ const servicios = [
     titulo: "Consulta y Evaluación Nutricional",
     descripcion:
       "Evaluamos tu salud, hábitos y objetivos para comenzar tu proceso nutricional.",
+    detalle:
+      "En esta consulta revisamos tu historial, hábitos, objetivos y necesidades para crear una estrategia nutricional personalizada desde el primer día.",
     icono: "doctor",
   },
   {
     titulo: "Valoración corporal /antropométrica",
     descripcion:
       "Analizamos tu composición corporal para establecer metas reales.",
+    detalle:
+      "Se realizan mediciones corporales para conocer tu punto de partida y establecer objetivos claros, saludables y alcanzables.",
     icono: "gym",
   },
   {
     titulo: "Plan de Alimentación Personalizado",
     descripcion:
       "Creamos un plan adaptado a tu estilo de vida, sin dietas extremas.",
+    detalle:
+      "Recibes un plan práctico y flexible, adaptado a tus gustos, horarios y rutina, para que puedas mejorar sin restricciones extremas.",
     icono: "food",
   },
   {
     titulo: "Orientación y Educación Nutricional",
     descripcion:
       "Aprende a comer y sentirte mejor con la comida con una asesoría clara y práctica.",
+    detalle:
+      "Aprendes a tomar mejores decisiones, entender tus porciones y construir una relación más saludable con la comida.",
     icono: "chart",
   },
   {
     titulo: "Control de Progreso",
     descripcion:
       "Monitoreamos tu progreso y ajustamos tu plan para mejores resultados.",
+    detalle:
+      "Revisamos tus avances y ajustamos el plan según tus resultados, sensaciones y objetivos para mantener un progreso constante.",
     icono: "heart",
   },
   {
     titulo: "Seguimiento en todo momento con App",
     descripcion:
-      "Puedes seguir tu progreso y verificar tus dietas a traves de la aplicacion",
+      "Puedes seguir tu progreso y verificar tus dietas a través de la aplicación.",
+    detalle:
+      "Con la aplicación puedes consultar tu plan, revisar indicaciones y llevar un seguimiento más ordenado de tu proceso nutricional.",
     icono: "checklist",
   },
 ];
 ---
 
 <div
-  class:list={["bg-gradient-to-b", "from-crema3", "via-crema2", "to-crema3"]}
+  class:list={[
+    "bg-gradient-to-b",
+    "from-crema3",
+    "via-crema2",
+    "to-crema3",
+    "pb-20",
+  ]}
 >
   <section id="servicios" class:list={["container", "mx-auto", "pt-10", "px-4"]}>
     <div class="text-center mb-5 mt-10">
@@ -52,9 +70,11 @@ const servicios = [
         Servicios nutricionales
       </span>
     </div>
+
     <h2
       class:list={[
-        "text-4xl sm:text-5xl ",
+        "text-4xl",
+        "sm:text-5xl",
         "text-center",
         "mt-4",
         "text-brown/80",
@@ -64,6 +84,7 @@ const servicios = [
     >
       ¿Por qué elegir a Alondra Aldana?
     </h2>
+
     <p
       class:list={[
         "mb-15",
@@ -77,12 +98,24 @@ const servicios = [
       Una atención nutricional personalizada, enfocada en resultados reales y
       hábitos sostenibles.
     </p>
-    <div class:list={["flex", "flex-wrap", "gap-8", "justify-center"]}>
+
+    <div
+      class:list={[
+        "grid",
+        "grid-cols-1",
+        "sm:grid-cols-2",
+        "lg:grid-cols-3",
+        "xl:grid-cols-4",
+        "gap-8",
+        "justify-items-center",
+      ]}
+    >
       {
         servicios.map((servicio) => (
           <CardServicios
             titulo={servicio.titulo}
             descripcion={servicio.descripcion}
+            detalle={servicio.detalle}
             icono={servicio.icono}
             botonTexto="Saber más"
             hrefBoton="#"
