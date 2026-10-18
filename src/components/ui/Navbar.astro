@@ -1,6 +1,6 @@
-<nav class:list={["fixed", "top-0", "left-0", "w-full", "z-50"]}>
+<nav data-mobile-nav class:list={["fixed", "top-0", "left-0", "w-full", "z-50"]}>
   <div
-    class:list={[
+    class="nav-shell" class:list={[
       "lg:w-3/4",
       "md:w-3/4",
       "2xl:w-5/7",
@@ -8,7 +8,7 @@
       "p-5",
     ]}
   >
-    <ul
+    <ul class="nav-bar"
       class:list={[
         "grid",
         "grid-cols-3",
@@ -25,7 +25,7 @@
       ]}
     >
       <!-- Logo -->
-      <li
+      <li class="nav-brand"
         class:list={[
           "w-full",
           "items-center",
@@ -59,7 +59,7 @@
       </li>
 
       <!-- Redes sociales -->
-      <li
+      <li class="nav-social" id="mobile-social"
         class:list={[
           "w-full",
           "items-center",
@@ -105,7 +105,7 @@
       </li>
 
       <!-- Links -->
-      <li
+      <li class="nav-pages" id="mobile-pages"
         class:list={[
           "w-full",
           "items-center",
@@ -166,6 +166,34 @@
           CONTACTAME
         </a>
       </li>
+      <li class="nav-toggle-item">
+        <button type="button" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-pages mobile-social">
+          <span></span><span></span><span></span>
+        </button>
+      </li>
     </ul>
   </div>
 </nav>
+<script>
+  const nav = document.querySelector<HTMLElement>('[data-mobile-nav]');
+  const toggle = nav?.querySelector<HTMLButtonElement>('.nav-toggle');
+  const setOpen = (open: boolean) => {
+    nav?.classList.toggle('is-open', open);
+    toggle?.setAttribute('aria-expanded', String(open));
+    toggle?.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  };
+  toggle?.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (event.target instanceof Node && !nav?.contains(event.target)) setOpen(false);
+  });
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', event => {
+    if (event.matches) setOpen(false);
+  });
+</script>

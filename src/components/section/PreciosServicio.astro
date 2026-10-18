@@ -45,7 +45,7 @@ const precios = [
 ];
 ---
 
-<section class="relative overflow-hidden bg-gradient-to-b from-crema3 via-crema2 to-crema3 py-24 px-4">
+<section class="pricing-section relative overflow-hidden bg-gradient-to-b from-crema3 via-crema2 to-crema3 py-24 px-4">
   <div class="pointer-events-none absolute -top-32 -left-24 h-20 w-80 rounded-full bg-[#9A9A22]/10 blur-3xl"></div>
   <div class="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#8B6F47]/10 blur-3xl"></div>
 
@@ -68,7 +68,7 @@ const precios = [
     <div class="mt-16 grid gap-8 md:grid-cols-3">
       {
         precios.map((plan) => (
-          <article
+          <article class="pricing-card"
             class:list={[
               "group relative overflow-hidden rounded-[2rem] border p-8 text-center transition-all duration-500",
               "bg-white/25 backdrop-blur-xl",

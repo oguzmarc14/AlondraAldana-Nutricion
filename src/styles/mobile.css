@@ -1,0 +1,85 @@
+/* Keep the existing desktop navigation; use a compact menu below laptop width. */
+.nav-toggle-item { display: none; }
+@media (max-width: 1023px) {
+  [data-mobile-nav] .nav-shell { width: 100%; padding: 0.75rem 1rem; }
+  [data-mobile-nav] .nav-bar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 0.4rem 0.6rem;
+    max-height: calc(100vh - 1.5rem);
+    max-height: calc(100dvh - 1.5rem);
+    overflow-y: auto;
+    border-radius: 1.75rem;
+    background: rgba(246, 228, 201, 0.94);
+  }
+  [data-mobile-nav] .nav-brand { justify-content: flex-start; min-width: 0; padding-left: 0.25rem; }
+  [data-mobile-nav] .nav-brand img { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
+  [data-mobile-nav] .nav-brand span { font-size: clamp(1rem, 4.8vw, 1.4rem); white-space: nowrap; }
+  .nav-toggle-item { display: block; grid-column: 2; grid-row: 1; }
+  .nav-toggle { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; width: 44px; height: 44px; border-radius: 50%; color: var(--color-brown); cursor: pointer; }
+  .nav-toggle span { width: 21px; height: 2px; background: currentColor; transition: transform 180ms, opacity 180ms; }
+  .is-open .nav-toggle span:first-child { transform: translateY(7px) rotate(45deg); }
+  .is-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .is-open .nav-toggle span:last-child { transform: translateY(-7px) rotate(-45deg); }
+  [data-mobile-nav] .nav-pages, [data-mobile-nav] .nav-social { display: none; grid-column: 1 / -1; }
+  [data-mobile-nav].is-open .nav-pages { display: flex; flex-direction: column; gap: 0.25rem; padding: 0.75rem 0 0.25rem; grid-row: 2; }
+  [data-mobile-nav] .nav-pages a { display: flex; align-items: center; justify-content: center; min-height: 44px; width: 100%; font-size: 1rem; padding: 0.6rem 1rem; }
+  [data-mobile-nav].is-open .nav-social { display: flex; grid-row: 3; padding: 0.5rem 0; }
+  [data-mobile-nav] .nav-social a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; }
+  [data-mobile-nav] .nav-social img { max-width: 32px; max-height: 30px; object-fit: contain; }
+  [data-mobile-nav] a:hover { transform: none; }
+  .nav-toggle:focus-visible, [data-mobile-nav] a:focus-visible { outline: 2px solid var(--color-brown); outline-offset: 2px; }
+  #home, #servicios, #contacto { scroll-margin-top: 100px; }
+}
+
+@media (max-width: 1023px) {
+  .nutrition-hero { height: auto; min-height: 100svh; }
+  .nutrition-hero > img { height: 100%; object-fit: cover; object-position: 65% center; }
+  .nutrition-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(246,228,201,0.96), rgba(246,228,201,0.82) 60%, rgba(246,228,201,0.35)); }
+  .nutrition-hero > div { z-index: 1; left: auto; width: 100%; height: auto; min-height: 100svh; padding: 7rem 1.25rem 3rem; gap: 1.25rem; }
+  .nutrition-hero h1, .nutrition-hero h2, .nutrition-hero p { width: 100%; max-width: 34rem; }
+  .nutrition-hero h1 { font-size: clamp(2rem, 7vw, 3rem); line-height: 1.15; margin-top: 0; }
+  .nutrition-hero h2 { font-size: 1.1rem; line-height: 1.6; margin-top: 0; }
+  .nutrition-hero p { font-size: 1.15rem; color: var(--color-brown); }
+  .nutrition-hero a { min-height: 46px; text-align: center; }
+}
+
+@media (max-width: 767px) {
+  section h2 { font-size: clamp(1.75rem, 6.5vw, 2.5rem); line-height: 1.2; overflow-wrap: anywhere; }
+  section > p, section > .container > p { width: auto; margin-inline: 1rem; }
+  .about-section { padding-inline: 1rem; padding-bottom: 2.5rem; }
+  .about-section > article { flex-direction: column; gap: 1.5rem; }
+  .about-section > article > div { width: 100%; max-width: 34rem; margin: 0; }
+  .about-card { width: 100%; height: auto; padding: 1.5rem; }
+  .about-card h3 { font-size: 1.8rem; }
+  .about-card p { line-height: 1.65; margin-bottom: 1.5rem; }
+  .portrait-card { width: 100%; height: auto; min-height: 300px; margin-inline: auto; }
+  .portrait-card img { max-width: 100%; }
+  #servicios > div:last-child { grid-template-columns: minmax(0, 1fr); }
+  [data-flip-card] { height: auto; min-width: 0; }
+  [data-flip-inner] { display: grid; height: auto; }
+  [data-flip-inner] > div { position: relative; grid-area: 1 / 1; height: auto; min-height: 420px; }
+  [data-flip-inner] > div > div { padding: 1.5rem; }
+  [data-flip-card] h3 { font-size: 1.35rem; overflow-wrap: anywhere; }
+  [data-flip-button] { min-height: 44px; }
+  .pricing-section { padding-block: 3.5rem; }
+  .pricing-section .grid { grid-template-columns: minmax(0, 1fr); }
+  .pricing-card { padding: 2rem 1.25rem; transform: none; }
+  .pricing-card > .absolute { top: 1rem; right: 1rem; }
+  .benefits-section article { width: 100%; padding: 1.5rem; }
+  .benefits-section article h3 { font-size: 1.4rem; }
+  .benefits-section article h3 + div { margin-inline: auto; }
+  .testimonials-section article { width: 100%; padding: 1.5rem; }
+  #contacto { padding-block: 3.5rem; }
+  #contactame-form { padding: 1.25rem; }
+  #contactame-form input:not([type='checkbox']), #contactame-form select, #contactame-form textarea { font-size: 16px; min-width: 0; }
+  #contactame-form input[type='checkbox'] { flex-shrink: 0; }
+  #contactame-form button { width: 100%; padding-inline: 1rem; min-height: 48px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle span { transition: none; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .pricing-section .grid { grid-template-columns: minmax(0, 1fr); max-width: 36rem; margin-inline: auto; }
+  .pricing-card { transform: none; }
+}
