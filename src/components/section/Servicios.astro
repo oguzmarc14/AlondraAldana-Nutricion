@@ -99,7 +99,7 @@ const servicios = [
       hábitos sostenibles.
     </p>
 
-    <div
+    <div class="services-grid"
       class:list={[
         "grid",
         "grid-cols-1",
@@ -125,3 +125,11 @@ const servicios = [
     </div>
   </section>
 </div>
+<style>
+  @media (min-width: 1280px) {
+    .services-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+    .services-grid > :global(article) { grid-column: span 2; }
+    .services-grid > :global(article:nth-of-type(5)) { grid-column: 3 / span 2; }
+    .services-grid > :global(article:nth-of-type(6)) { grid-column: 5 / span 2; }
+  }
+</style>
