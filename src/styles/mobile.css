@@ -83,3 +83,42 @@
   .pricing-section .grid { grid-template-columns: minmax(0, 1fr); max-width: 36rem; margin-inline: auto; }
   .pricing-card { transform: none; }
 }
+
+@media (max-width: 1023px) {
+  [data-mobile-nav] .nav-bar { position: relative; }
+  [data-mobile-nav] .nav-brand,
+  [data-mobile-nav] .nav-brand a { position: static; transform: none; }
+  [data-mobile-nav] .nav-brand span {
+    position: absolute;
+    left: 50%;
+    top: 0.4rem;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    max-width: calc(100% - 116px);
+    font-size: clamp(1rem, 4.8vw, 1.4rem);
+  }
+}
+@media (max-width: 767px) {
+  .nutrition-hero .hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+  }
+  .hero-actions > div { min-width: 0; }
+  .nutrition-hero .hero-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    height: 100%;
+    padding: 0.65rem 0.75rem;
+    line-height: 1.4;
+  }
+}
